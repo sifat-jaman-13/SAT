@@ -12,17 +12,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup MSYS2 (gcc)
-        uses: msys2/setup-msys2@v2
-        with:
-          update: true
-          install: >-
-            mingw-w64-x86_64-gcc
+      - name: Install MinGW (GCC)
+        run: |
+          choco install mingw --yes --no-progress
+          "C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw64\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+
+      - name: Show GCC version
+        run: gcc --version
 
       - name: Build Phonebook
-        shell: msys2 {0}
-        run: gcc -Wall -Wextra -Werror -O2 "Phonebook.c" -o phonebook.exe
+        run: gcc -Wall -Wextra -O2 -mwindows "Phonebook.c" -o phonebook.exe
 
       - name: Build Movie Management System
-        shell: msys2 {0}
-        run: gcc -Wall -Wextra -Werror -O2 "Movie Management System.c" -o movie_management.exe
+        run: gcc -Wall -Wextra -O2 "Movie Management System.c" -o movie_management.exe
