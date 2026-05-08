@@ -1,6 +1,6 @@
 # SAT - Management Systems
 
-![University](https://img.shields.io/badge/University-North%20South%20University-blue)
+![University](https://img.shields.io/badge/University-North%20South%20University-blue) https://ece.northsouth.edu/courses/cse-115/
 ![Course](https://img.shields.io/badge/Course-CSE115L-brightgreen)
 ![Language](https://img.shields.io/badge/Language-C-orange)
 ![Version](https://img.shields.io/badge/Version-2.0%20Fixed-yellow)
