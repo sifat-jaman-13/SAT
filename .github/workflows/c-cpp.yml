@@ -15,13 +15,13 @@ jobs:
       - name: Install MinGW (GCC)
         run: |
           choco install mingw --yes --no-progress
-          "C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw64\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          "$env:ChocolateyInstall\lib\mingw\tools\install\mingw64\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
 
       - name: Show GCC version
         run: gcc --version
 
       - name: Build Phonebook
-        run: gcc -Wall -Wextra -Werror -O2 -mwindows "Phonebook.c" -o phonebook.exe
+        run: gcc -Wall -Wextra -Werror -O2 "Phonebook.c" -o phonebook.exe
 
       - name: Build Movie Management System
         run: gcc -Wall -Wextra -Werror -O2 "Movie Management System.c" -o movie_management.exe
