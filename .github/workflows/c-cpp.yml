@@ -15,10 +15,14 @@ jobs:
       - name: Install MinGW (GCC)
         run: |
           choco install mingw --yes --no-progress
-          "$env:ChocolateyInstall\lib\mingw\tools\install\mingw64\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          $mingwBin = Get-ChildItem -Path "$env:ChocolateyInstall\lib\mingw" -Recurse -Directory -Filter bin | Where-Object { Test-Path (Join-Path $_.FullName "gcc.exe") } | Select-Object -First 1 -ExpandProperty FullName
+          if (-not $mingwBin) { throw "Could not locate MinGW gcc.exe after installation." }
+          $mingwBin | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
 
       - name: Show GCC version
-        run: gcc --version
+        run: |
+          where.exe gcc
+          gcc --version
 
       - name: Build Phonebook
         run: gcc -Wall -Wextra -Werror -O2 "Phonebook.c" -o phonebook.exe
