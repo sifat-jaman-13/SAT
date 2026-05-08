@@ -12,8 +12,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup MSYS2 (gcc)
+        uses: msys2/setup-msys2@v2
+        with:
+          update: true
+          install: >-
+            mingw-w64-x86_64-gcc
+
       - name: Build Phonebook
+        shell: msys2 {0}
         run: gcc -Wall -Wextra -Werror -O2 "Phonebook.c" -o phonebook.exe
 
       - name: Build Movie Management System
+        shell: msys2 {0}
         run: gcc -Wall -Wextra -Werror -O2 "Movie Management System.c" -o movie_management.exe
