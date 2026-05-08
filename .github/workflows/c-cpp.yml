@@ -21,7 +21,7 @@ jobs:
         run: gcc --version
 
       - name: Build Phonebook
-        run: gcc -Wall -Wextra -O2 -mwindows "Phonebook.c" -o phonebook.exe
+        run: gcc -Wall -Wextra -Werror -O2 -mwindows "Phonebook.c" -o phonebook.exe
 
       - name: Build Movie Management System
-        run: gcc -Wall -Wextra -O2 "Movie Management System.c" -o movie_management.exe
+        run: gcc -Wall -Wextra -Werror -O2 "Movie Management System.c" -o movie_management.exe
