@@ -1,11 +1,11 @@
 # SAT - Management Systems
 
-[![University](https://img.shields.io/badge/University-North%20South%20University-blue)](https://ece.northsouth.edu/courses/cse-115/) 
-![Course](https://img.shields.io/badge/Course-CSE115L-brightgreen)
-![Language](https://img.shields.io/badge/Language-C-orange)
-![Version](https://img.shields.io/badge/Version-2.0%20Fixed-yellow)
-![Status](https://img.shields.io/badge/Status-Production%20Ready-success)
-![License](https://img.shields.io/badge/License-Educational%20Use-informational)
+[![University](https://img.shields.io/badge/University-North%20South%20University-blue)](https://www.northsouth.edu/)
+[![Course](https://img.shields.io/badge/Course-CSE115L-brightgreen)](https://ece.northsouth.edu/courses/cse-115/)
+[![Language](https://img.shields.io/badge/Language-C-orange)](https://en.wikipedia.org/wiki/C_(programming_language))
+[![Version](https://img.shields.io/badge/Version-2.0%20Fixed-yellow)](#releases)
+[![Status](https://img.shields.io/badge/Status-Production%20Ready-success)](#)
+[![License](https://img.shields.io/badge/License-Educational%20Use-informational)](LICENSE)
 
 Advanced C-based management systems featuring **Phonebook Management** and **Movie Library Management**. These projects were developed as part of CSE115L coursework at North South University, demonstrating proficiency in file handling, data structures, dynamic memory management, and user interface design in C.
 
@@ -15,8 +15,8 @@ Advanced C-based management systems featuring **Phonebook Management** and **Mov
 
 | System | Type | Purpose | Language |
 |--------|------|---------|----------|
-| **Phonebook** | Contact Manager | Manage personal contacts with detailed information | C (Fixed) |
-| **Movie Library** | Database System | Organize and search personal movie collection | C (Fixed) |
+| **Phonebook** | Contact Manager | Manage personal contacts with detailed information | C |
+| **Movie Library** | Database System | Organize and search personal movie collection | C  |
 
 ---
 
