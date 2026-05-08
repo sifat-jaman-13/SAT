@@ -17,7 +17,7 @@ typedef struct
 } Movie;
 
 void login();
-void welcomeMenu();
+void welcomeMenu(FILE *fptr);
 void addMovie(FILE *fptr);
 void searchMovieByName(FILE *fptr);
 void searchMovieByDirector(FILE *fptr);
@@ -725,6 +725,7 @@ void deleteLibrary(FILE *fptr)
     system("cls");
     printf("\t\t=== Delete Library ===\n");
 
+    if (fptr != NULL) fclose(fptr);
     if (remove("movies.txt") == 0)
     {
         printf("Library deleted successfully.\n");
