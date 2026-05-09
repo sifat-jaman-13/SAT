@@ -527,13 +527,11 @@ This project is provided for educational purposes as part of **North South Unive
 
 ## 👥 Contributors
 
-This project was developed by a team of 3 CSE students at North South University:
+This project was developed and maintained by Sifat Jaman:
 
 | Contributor | GitHub | Role |
 |-------------|--------|------|
-| **Tanvir Miraz** | [@Tanvir-Miraz](https://github.com/Tanvir-Miraz) | Core Development |
-| **Fahmid Shahriar Alvee** | [@FahmidShahriarAlvee](https://github.com/FahmidShahriarAlvee) | Core Development |
-| **Project Maintainer** | [Repository](https://github.com/sifat-jaman-13/SAT) | Maintenance & Testing |
+| **Sifat Jaman** | [@sifat-jaman-13](https://github.com/sifat-jaman-13) | Developer & Maintainer |
 
 **Course Instructor:** CSE115L Faculty  
 **Institution:** North South University  
@@ -596,9 +594,8 @@ This project was developed by a team of 3 CSE students at North South University
 
 ## 📞 Contact & Support
 
-**Questions?** Check the project documentation or contact the contributors:
-- 👤 **Tanvir Miraz** - [@Tanvir-Miraz](https://github.com/Tanvir-Miraz)
-- 👤 **Fahmid Shahriar Alvee** - [@FahmidShahriarAlvee](https://github.com/FahmidShahriarAlvee)
+**Questions?** Check the project documentation or contact Sifat Jaman:
+- 👤 **Sifat Jaman** - [@sifat-jaman-13](https://github.com/sifat-jaman-13)
 
 ---
 
