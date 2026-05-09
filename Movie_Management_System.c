@@ -28,6 +28,9 @@ typedef struct
     int year;
     char director[100];
     char language[50];
+    int rating;
+    char checkout_date[11];
+    int is_rented;
 } Movie;
 
 void login(void);
@@ -47,6 +50,13 @@ void countMovies(FILE *fptr);
 void deleteLibrary(FILE *fptr);
 void editMovieDetails(FILE *fptr);
 void safe_fgets(char *buffer, int size);
+void rateMovie(FILE *fptr);
+void rentMovie(FILE *fptr);
+void returnMovie(FILE *fptr);
+void showGenreStatistics(FILE *fptr);
+void exportToCSV(FILE *fptr);
+void backupDatabase(void);
+void restoreDatabase(void);
 
 int main()
 {
@@ -147,10 +157,16 @@ void welcomeMenu(FILE *fptr)
         printf("5. Display All Movies (Sorted by Year)\n");
         printf("6. Edit Movie Details\n");
         printf("7. Count Movies in Library\n");
-        printf("8. Delete Entire Library\n");
-        printf("9. Exit\n\n");
+        printf("8. Rate a Movie (1-5 stars)\n");
+        printf("9. Rent a Movie\n");
+        printf("10. Return a Movie\n");
+        printf("11. Genre Statistics\n");
+        printf("12. Export to CSV\n");
+        printf("13. Backup Database\n");
+        printf("14. Delete Entire Library\n");
+        printf("15. Exit\n\n");
 
-        printf("Enter your choice (1-9): ");
+        printf("Enter your choice (1-15): ");
 
         if (scanf("%d", &choice) != 1)
         {
@@ -241,9 +257,27 @@ void welcomeMenu(FILE *fptr)
             countMovies(fptr);
             break;
         case 8:
-            deleteLibrary(fptr);
+            rateMovie(fptr);
             break;
         case 9:
+            rentMovie(fptr);
+            break;
+        case 10:
+            returnMovie(fptr);
+            break;
+        case 11:
+            showGenreStatistics(fptr);
+            break;
+        case 12:
+            exportToCSV(fptr);
+            break;
+        case 13:
+            backupDatabase();
+            break;
+        case 14:
+            deleteLibrary(fptr);
+            break;
+        case 15:
             printf("Exiting... Thank you for using Movie Library!\n");
             return;
         default:
@@ -285,6 +319,10 @@ void addMovie(FILE *fptr)
 
     printf("Language: ");
     safe_fgets(movie.language, sizeof(movie.language));
+
+    movie.rating = 0;
+    movie.is_rented = 0;
+    strcpy(movie.checkout_date, "");
 
     if (fwrite(&movie, sizeof(Movie), 1, fptr) != 1)
     {
@@ -946,4 +984,383 @@ void editMovieDetails(FILE *fptr)
     printf("\n✓ Movie details updated successfully!\n");
 
     free(movies);
+}
+
+void rateMovie(FILE *fptr)
+{
+    CLEAR_SCREEN;
+    printf("\n╔════════════════════════════════════════╗\n");
+    printf("║  RATE A MOVIE                         ║\n");
+    printf("╚════════════════════════════════════════╝\n\n");
+
+    char searchTitle[100];
+    printf("Enter movie title to rate: ");
+    safe_fgets(searchTitle, sizeof(searchTitle));
+
+    int rating;
+    printf("Enter rating (1-5 stars): ");
+    if (scanf("%d", &rating) != 1 || rating < 1 || rating > 5)
+    {
+        printf("Invalid rating. Please enter a number between 1-5.\n");
+        getchar();
+        return;
+    }
+    getchar();
+
+    int count = 0;
+    Movie *movies;
+    Movie temp;
+
+    rewind(fptr);
+    while (fread(&temp, sizeof(Movie), 1, fptr) == 1)
+        count++;
+
+    if (count == 0)
+    {
+        printf("No movies found.\n");
+        return;
+    }
+
+    movies = (Movie *)malloc(count * sizeof(Movie));
+    if (movies == NULL)
+    {
+        printf("Memory allocation error.\n");
+        return;
+    }
+
+    rewind(fptr);
+    count = 0;
+    while (fread(&movies[count], sizeof(Movie), 1, fptr) == 1)
+        count++;
+
+    int foundIndex = -1;
+    for (int i = 0; i < count; i++)
+    {
+        if (strcmp(movies[i].title, searchTitle) == 0)
+        {
+            foundIndex = i;
+            break;
+        }
+    }
+
+    if (foundIndex == -1)
+    {
+        printf("Movie not found.\n");
+        free(movies);
+        return;
+    }
+
+    movies[foundIndex].rating = rating;
+
+    rewind(fptr);
+    for (int i = 0; i < count; i++)
+        fwrite(&movies[i], sizeof(Movie), 1, fptr);
+
+    printf("✓ Movie rated %d/5 stars successfully!\n", rating);
+    free(movies);
+}
+
+void rentMovie(FILE *fptr)
+{
+    CLEAR_SCREEN;
+    printf("\n╔════════════════════════════════════════╗\n");
+    printf("║  RENT A MOVIE                         ║\n");
+    printf("╚════════════════════════════════════════╝\n\n");
+
+    char searchTitle[100];
+    printf("Enter movie title to rent: ");
+    safe_fgets(searchTitle, sizeof(searchTitle));
+
+    char checkout_date[11];
+    printf("Enter checkout date (YYYY-MM-DD): ");
+    safe_fgets(checkout_date, sizeof(checkout_date));
+
+    int count = 0;
+    Movie *movies;
+    Movie temp;
+
+    rewind(fptr);
+    while (fread(&temp, sizeof(Movie), 1, fptr) == 1)
+        count++;
+
+    if (count == 0)
+    {
+        printf("No movies found.\n");
+        return;
+    }
+
+    movies = (Movie *)malloc(count * sizeof(Movie));
+    if (movies == NULL)
+    {
+        printf("Memory allocation error.\n");
+        return;
+    }
+
+    rewind(fptr);
+    count = 0;
+    while (fread(&movies[count], sizeof(Movie), 1, fptr) == 1)
+        count++;
+
+    int foundIndex = -1;
+    for (int i = 0; i < count; i++)
+    {
+        if (strcmp(movies[i].title, searchTitle) == 0)
+        {
+            foundIndex = i;
+            break;
+        }
+    }
+
+    if (foundIndex == -1)
+    {
+        printf("Movie not found.\n");
+        free(movies);
+        return;
+    }
+
+    if (movies[foundIndex].is_rented)
+    {
+        printf("✗ Movie is already rented.\n");
+        free(movies);
+        return;
+    }
+
+    movies[foundIndex].is_rented = 1;
+    strcpy(movies[foundIndex].checkout_date, checkout_date);
+
+    rewind(fptr);
+    for (int i = 0; i < count; i++)
+        fwrite(&movies[i], sizeof(Movie), 1, fptr);
+
+    printf("✓ Movie rented successfully! Checkout date: %s\n", checkout_date);
+    free(movies);
+}
+
+void returnMovie(FILE *fptr)
+{
+    CLEAR_SCREEN;
+    printf("\n╔════════════════════════════════════════╗\n");
+    printf("║  RETURN A MOVIE                       ║\n");
+    printf("╚════════════════════════════════════════╝\n\n");
+
+    char searchTitle[100];
+    printf("Enter movie title to return: ");
+    safe_fgets(searchTitle, sizeof(searchTitle));
+
+    int count = 0;
+    Movie *movies;
+    Movie temp;
+
+    rewind(fptr);
+    while (fread(&temp, sizeof(Movie), 1, fptr) == 1)
+        count++;
+
+    if (count == 0)
+    {
+        printf("No movies found.\n");
+        return;
+    }
+
+    movies = (Movie *)malloc(count * sizeof(Movie));
+    if (movies == NULL)
+    {
+        printf("Memory allocation error.\n");
+        return;
+    }
+
+    rewind(fptr);
+    count = 0;
+    while (fread(&movies[count], sizeof(Movie), 1, fptr) == 1)
+        count++;
+
+    int foundIndex = -1;
+    for (int i = 0; i < count; i++)
+    {
+        if (strcmp(movies[i].title, searchTitle) == 0)
+        {
+            foundIndex = i;
+            break;
+        }
+    }
+
+    if (foundIndex == -1)
+    {
+        printf("Movie not found.\n");
+        free(movies);
+        return;
+    }
+
+    if (!movies[foundIndex].is_rented)
+    {
+        printf("✗ Movie is not currently rented.\n");
+        free(movies);
+        return;
+    }
+
+    movies[foundIndex].is_rented = 0;
+    strcpy(movies[foundIndex].checkout_date, "");
+
+    rewind(fptr);
+    for (int i = 0; i < count; i++)
+        fwrite(&movies[i], sizeof(Movie), 1, fptr);
+
+    printf("✓ Movie returned successfully!\n");
+    free(movies);
+}
+
+void showGenreStatistics(FILE *fptr)
+{
+    CLEAR_SCREEN;
+    printf("\n╔════════════════════════════════════════╗\n");
+    printf("║  GENRE STATISTICS                     ║\n");
+    printf("╚════════════════════════════════════════╝\n\n");
+
+    int count = 0;
+    Movie *movies;
+    Movie temp;
+
+    rewind(fptr);
+    while (fread(&temp, sizeof(Movie), 1, fptr) == 1)
+        count++;
+
+    if (count == 0)
+    {
+        printf("No movies found in library.\n");
+        return;
+    }
+
+    movies = (Movie *)malloc(count * sizeof(Movie));
+    if (movies == NULL)
+    {
+        printf("Memory allocation error.\n");
+        return;
+    }
+
+    rewind(fptr);
+    count = 0;
+    while (fread(&movies[count], sizeof(Movie), 1, fptr) == 1)
+        count++;
+
+    printf("Genre-wise breakdown:\n\n");
+
+    for (int i = 0; i < count; i++)
+    {
+        int genreCount = 1;
+        for (int j = i + 1; j < count; j++)
+        {
+            if (strcmp(movies[i].genre, movies[j].genre) == 0)
+                genreCount++;
+        }
+
+        int isDuplicate = 0;
+        for (int j = 0; j < i; j++)
+        {
+            if (strcmp(movies[i].genre, movies[j].genre) == 0)
+            {
+                isDuplicate = 1;
+                break;
+            }
+        }
+
+        if (!isDuplicate)
+            printf("%s: %d movie(s)\n", movies[i].genre, genreCount);
+    }
+
+    free(movies);
+}
+
+void exportToCSV(FILE *fptr)
+{
+    CLEAR_SCREEN;
+    printf("\n╔════════════════════════════════════════╗\n");
+    printf("║  EXPORT TO CSV                        ║\n");
+    printf("╚════════════════════════════════════════╝\n\n");
+
+    FILE *csvFile = fopen("movies_export.csv", "w");
+    if (csvFile == NULL)
+    {
+        printf("Error creating CSV file.\n");
+        return;
+    }
+
+    fprintf(csvFile, "Title,Genre,Year,Director,Language,Rating,Rented,Checkout Date\n");
+
+    Movie movie;
+    rewind(fptr);
+
+    int count = 0;
+    while (fread(&movie, sizeof(Movie), 1, fptr) == 1)
+    {
+        fprintf(csvFile, "%s,%s,%d,%s,%s,%d,%s,%s\n",
+                movie.title, movie.genre, movie.year, movie.director, movie.language,
+                movie.rating, movie.is_rented ? "Yes" : "No", movie.checkout_date);
+        count++;
+    }
+
+    fclose(csvFile);
+    printf("✓ Exported %d movies to 'movies_export.csv' successfully!\n", count);
+}
+
+void backupDatabase(void)
+{
+    CLEAR_SCREEN;
+    printf("\n╔════════════════════════════════════════╗\n");
+    printf("║  BACKUP DATABASE                      ║\n");
+    printf("╚════════════════════════════════════════╝\n\n");
+
+    FILE *source = fopen("movies.txt", "rb");
+    if (source == NULL)
+    {
+        printf("No database to backup.\n");
+        return;
+    }
+
+    FILE *backup = fopen("movies_backup.txt", "wb");
+    if (backup == NULL)
+    {
+        printf("Error creating backup file.\n");
+        fclose(source);
+        return;
+    }
+
+    char buffer[1024];
+    size_t bytes;
+    while ((bytes = fread(buffer, 1, sizeof(buffer), source)) > 0)
+        fwrite(buffer, 1, bytes, backup);
+
+    fclose(source);
+    fclose(backup);
+    printf("✓ Database backed up successfully to 'movies_backup.txt'!\n");
+}
+
+void restoreDatabase(void)
+{
+    CLEAR_SCREEN;
+    printf("\n╔════════════════════════════════════════╗\n");
+    printf("║  RESTORE DATABASE                     ║\n");
+    printf("╚════════════════════════════════════════╝\n\n");
+
+    FILE *backup = fopen("movies_backup.txt", "rb");
+    if (backup == NULL)
+    {
+        printf("No backup file found.\n");
+        return;
+    }
+
+    FILE *target = fopen("movies.txt", "wb");
+    if (target == NULL)
+    {
+        printf("Error opening target database.\n");
+        fclose(backup);
+        return;
+    }
+
+    char buffer[1024];
+    size_t bytes;
+    while ((bytes = fread(buffer, 1, sizeof(buffer), backup)) > 0)
+        fwrite(buffer, 1, bytes, target);
+
+    fclose(backup);
+    fclose(target);
+    printf("✓ Database restored successfully from backup!\n");
 }

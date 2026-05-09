@@ -41,11 +41,12 @@ A comprehensive contact management application with 7+ features:
 - Mobile Number (7-20 digits) • Gender  
 - Email • Birthdate • Address
 
-### 🎬 **Movie Library Management System** (`Movie_Management_System_FIXED.c`)
+### 🎬 **Movie Library Management System** (`Movie_Management_System.c`)
 
-A sophisticated movie database with 4 search methods and bulk operations:
+A sophisticated movie database with advanced features and analytics:
 
-- 🎥 **Add Movies** - Add new movies to library
+**Core Features:**
+- 🎥 **Add Movies** - Add new movies to library with full metadata
 - 🔎 **Search Movies** - Find by:
   - Movie Title
   - Director Name
@@ -62,10 +63,17 @@ A sophisticated movie database with 4 search methods and bulk operations:
 - 🔐 **Login System** - Secure access with credentials:
   - Username: `admin`
   - Password: `sifat`
-- 💾 **Data Persistence** - Movies saved in `movies.txt`
+
+**Advanced Features (v2.0):**
+- ⭐ **Rating System** - Rate movies on 1-5 star scale
+- 🎫 **Rental Tracking** - Track checkout dates and rental status
+- 📈 **Genre Statistics** - View genre distribution and analytics
+- 📥 **CSV Export** - Export entire library to `movies_export.csv`
+- 💾 **Database Backup** - Create backups to `movies_backup.txt`
+- 📋 **Movie Count** - View total library statistics
 
 **Movie Information Fields:**
-- Title • Genre • Release Year • Director • Language
+- Title • Genre • Release Year • Director • Language • Rating • Rental Status • Checkout Date
 
 ---
 
