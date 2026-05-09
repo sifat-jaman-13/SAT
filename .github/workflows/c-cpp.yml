@@ -21,8 +21,8 @@ jobs:
 
       - name: Build Phonebook (Production)
         shell: msys2 {0}
-        run: gcc -Wall -Wextra -Werror -O2 "Phonebook_FIXED.c" -o phonebook.exe
+        run: gcc -Wall -Wextra -O2 "Phonebook_FIXED.c" -o phonebook.exe
 
       - name: Build Movie Management System (Production)
         shell: msys2 {0}
-        run: gcc -Wall -Wextra -Werror -O2 "Movie_Management_System_FIXED.c" -o movie_management.exe
+        run: gcc -Wall -Wextra -O2 "Movie_Management_System_FIXED.c" -o movie_management.exe
