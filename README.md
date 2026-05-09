@@ -297,6 +297,20 @@ Project Directory/
 
 ---
 
+## ⚠️ Version History & Deprecation
+
+**Current Production Version:** v2.0 (FIXED) ✅
+
+The original v1.0 files (`Phonebook.c` and `Movie Management System.c`) contained bugs and security issues. These have been archived in the `deprecated/` folder for reference only.
+
+**Always use the FIXED versions:**
+- `Phonebook_FIXED.c` ✅
+- `Movie_Management_System_FIXED.c` ✅
+
+The deprecated files are kept for academic/historical purposes to demonstrate the improvements made in v2.0.
+
+---
+
 ## 🐛 Fixed Issues & Improvements (v2.0)
 
 ### Critical Fixes
@@ -393,10 +407,11 @@ SAT/
 ├── README.md                              (This documentation)
 ├── Phonebook_FIXED.c                      (Fixed & production-ready)
 ├── Movie_Management_System_FIXED.c        (Fixed & production-ready)
-├── Phonebook.c                            (Original version - deprecated)
-├── Movie Management System.c              (Original version - deprecated)
 ├── CSE115L_GROUP_B1_Project_Report.pdf   (Detailed technical report)
 ├── CSE115L_report_cover_S12_B1.docx      (Cover documentation)
+├── deprecated/                            (Old versions - archived)
+│   ├── Phonebook.c                        (Original version - deprecated)
+│   └── Movie Management System.c          (Original version - deprecated)
 └── .github/                               (GitHub workflows if any)
 ```
 
