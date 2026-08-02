@@ -1,0 +1,237 @@
+SCARZERO GAME STORE - PROPRIETARY LICENSE
+Version 1.0 - Effective Date: May 8, 2026
+
+============================================================
+
+IMPORTANT: READ THIS LICENSE CAREFULLY BEFORE USING, COPYING, MODIFYING, OR
+DISTRIBUTING THIS SOFTWARE.
+
+============================================================
+
+1. OWNERSHIP AND RIGHTS
+
+This software project "ScarZero Game Store" (hereinafter "Software") is the
+exclusive intellectual property of Sifat Jaman (hereinafter "Author"). All
+rights not expressly granted in this license are reserved by the Author.
+
+The Software was created as a solo project for CSE101 (Object-Oriented
+Programming) course at North South University.
+
+============================================================
+
+2. GRANT OF LICENSE
+
+NO LICENSE IS GRANTED UNLESS EXPRESSLY PROVIDED IN WRITING BY THE AUTHOR.
+
+The Author reserves the absolute right to:
+- Grant limited use licenses to specific individuals or organizations
+- Deny use to any party
+- Revoke this license at any time
+- Change license terms at any time with written notice
+
+============================================================
+
+3. PERMITTED USES (WITHOUT EXPLICIT PERMISSION)
+
+You may:
+- View the source code for educational and learning purposes only
+- Fork this repository on GitHub for your own study
+- Read and understand the implementation for learning OOP and Java concepts
+- Study the JavaFX implementation for GUI development learning
+
+You may NOT:
+- Use this Software for commercial purposes
+- Modify the Software without written permission from the Author
+- Distribute, sell, or share this Software with others
+- Create derivative works based on this Software
+- Use this Software in your own projects
+- Claim ownership or authorship of any part of this Software
+- Extract components for reuse in other projects
+
+============================================================
+
+4. REQUEST FOR PERMISSION
+
+If you wish to use this Software beyond the permitted educational purposes,
+you MUST obtain explicit written permission from the Author.
+
+To request permission, contact:
+- Author: Sifat Jaman
+- Institution: North South University
+- Course: CSE101
+- GitHub: https://github.com/sifat-jaman-13
+- Repository: https://github.com/sifat-jaman-13/Moive-Project-Java
+
+Permission requests should include:
+1. Your name and contact information
+2. Purpose of use (commercial, educational, research, etc.)
+3. How you intend to use the Software
+4. Duration of intended use
+5. Any modifications you plan to make
+
+The Author will review each request and respond within 14 days.
+
+============================================================
+
+5. PERMITTED MODIFICATIONS (WITH EXPLICIT PERMISSION)
+
+If explicit written permission has been granted for use, the following may
+apply:
+- You may modify the Software only as explicitly permitted in your license grant
+- All modifications remain the property of the Author
+- You must not distribute modified versions without additional written consent
+- You must clearly indicate which parts you have modified
+- You must retain all copyright notices and license text
+
+============================================================
+
+6. NO WARRANTY
+
+THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+============================================================
+
+7. ACADEMIC INTEGRITY
+
+This Software was created as an original work for academic purposes. Students,
+educators, and academic institutions are reminded:
+- PLAGIARISM: Using this Software as your own work violates academic integrity
+  policies of all institutions
+- ATTRIBUTION: If you use concepts or code from this Software, you MUST provide
+  proper attribution to Sifat Jaman
+- ACADEMIC CONSEQUENCES: Misuse of this Software may result in disciplinary
+  action by your institution
+- HONOR CODE: Respect intellectual property rights as per your institution's
+  honor code
+
+============================================================
+
+8. DISTRIBUTION
+
+You may not distribute, sell, rent, lease, or lend this Software or any copy
+of it without explicit written permission from the Author.
+
+This includes:
+- Uploading to other code repositories
+- Sharing on personal websites or servers
+- Distributing to classmates or colleagues
+- Including in packages or bundles
+- Using as a base for template projects
+
+Any unauthorized distribution constitutes copyright infringement.
+
+============================================================
+
+9. TERMINATION
+
+This license is effective until terminated. Your rights under this license
+will terminate automatically without notice from the Author if you fail to
+comply with any term(s) of this license.
+
+Upon termination of this license, you must destroy all copies of the Software
+in your possession.
+
+============================================================
+
+10. GOVERNING LAW
+
+This license is governed by the laws of Bangladesh and the jurisdiction of
+North South University. Any legal disputes arising from this license shall be
+resolved in the courts of Dhaka, Bangladesh.
+
+============================================================
+
+11. ENTIRE AGREEMENT
+
+This license constitutes the entire agreement between you and the Author
+concerning the Software and supersedes any prior agreements or understandings.
+
+No modification of this license is effective unless signed in writing by the
+Author.
+
+============================================================
+
+12. SPECIAL TERMS FOR EDUCATIONAL INSTITUTIONS
+
+Educational institutions may:
+- Use this Software for teaching and learning purposes
+- Display this Software as an example of OOP implementation
+- Reference this project in coursework discussions
+
+Educational institutions may NOT:
+- Modify without permission
+- Distribute to external parties
+- Use for commercial purposes
+- Claim ownership
+
+Permission requests from educational institutions should reference:
+- Institution name
+- Course name and number
+- Instructor name
+- Intended educational use
+- Duration of use
+
+============================================================
+
+13. SPECIAL TERMS FOR NORTH SOUTH UNIVERSITY
+
+As this project was created for North South University:
+- The university may retain a copy for archival and educational purposes
+- The university may display this as an example of student work
+- The university acknowledges the Author's ownership and copyright
+- All course credits and marks associated with this project remain the
+  intellectual property of the university, while the code remains the
+  intellectual property of the Author
+
+============================================================
+
+14. CONTACT FOR LICENSING INQUIRIES
+
+For all licensing inquiries, permission requests, or questions about usage:
+
+Author: Sifat Jaman
+Institution: North South University
+Course: CSE101 - Object-Oriented Programming
+GitHub: https://github.com/sifat-jaman-13
+Repository: https://github.com/sifat-jaman-13/Moive-Project-Java
+
+Response Time: Up to 14 business days
+
+============================================================
+
+15. ATTRIBUTION REQUIREMENTS
+
+If permission is granted to use this Software, you must:
+- Include the original copyright notice: "Copyright © 2026 Sifat Jaman"
+- Include this license text
+- Identify all modifications you have made
+- Provide proper citation: "Based on ScarZero Movie Store (Java) by Sifat Jaman"
+- Acknowledge JavaFX and Maven in your project
+
+============================================================
+
+ACKNOWLEDGEMENT
+
+By accessing, viewing, downloading, or using this Software in any way, you
+acknowledge that you have read this license, understand its terms, and agree
+to be bound by them.
+
+If you do not agree to these terms, you must immediately:
+- Stop using the Software
+- Delete all copies in your possession
+- Cease all access to the Software
+
+============================================================
+
+Version: 1.0
+Effective Date: May 8, 2026
+Last Updated: May 8, 2026
+
+© 2026 Sifat Jaman. All Rights Reserved.
