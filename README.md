@@ -2,7 +2,7 @@
 
 > Two console applications written in C for a first-year programming lab: a phonebook that stores contacts, and a movie library with rentals, ratings, and reporting.
 
-[![C](https://img.shields.io/badge/C-ANSI%20C-A8B9CC?logo=c&logoColor=white)](https://en.wikipedia.org/wiki/C_(programming_language))
+[![C](https://img.shields.io/badge/C-ANSI%20C-A8B9CC?logo=c&logoColor=white)](https://en.cppreference.com/w/c)
 [![GCC](https://img.shields.io/badge/GCC-any%20version-4EAA25?logo=gnu&logoColor=white)](https://gcc.gnu.org/)
 [![Course](https://img.shields.io/badge/Course-CSE115L-yellow)](https://ece.northsouth.edu/)
 [![NSU](https://img.shields.io/badge/NSU-North%20South%20University-1E90FF)](https://www.northsouth.edu/)
