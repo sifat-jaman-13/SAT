@@ -1,0 +1,30 @@
+# Compiled binaries
+*.exe
+*.out
+*.o
+*.obj
+phonebook
+movies
+movie_management
+
+# Runtime data files (auto-created on first run)
+phonebook.txt
+temporary.txt
+movies.txt
+movies_backup.txt
+movies_export.csv
+temp.txt
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.layout
+*.depend
+*.cbp
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,635 +1,364 @@
-# SAT - Management Systems
+# 📇 SAT — Phonebook & Movie Library Management Systems
 
-[![University](https://img.shields.io/badge/University-North%20South%20University-blue)](https://www.northsouth.edu/)
-[![Course](https://img.shields.io/badge/Course-CSE115L-brightgreen)](https://ece.northsouth.edu/courses/cse-115/)
-[![Language](https://img.shields.io/badge/Language-C-orange)](https://www.cprogramming.com/)
-[![GCC](https://img.shields.io/badge/Compiler-GCC-red)](https://gcc.gnu.org/)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-333333?logo=github)](https://github.com/sifat-jaman-13/SAT)
-[![Version](https://img.shields.io/badge/Version-2.0%20Fixed-yellow)](#-version-history)
-[![Status](https://img.shields.io/badge/Status-Production%20Ready-success)](#-project-goals---all-achieved-)
-[![License](https://img.shields.io/badge/License-Educational%20Use-informational)](LICENSE)
+> Two console applications written in C for a first-year programming lab: a phonebook that stores contacts, and a movie library with rentals, ratings, and reporting.
 
-Advanced C-based management systems featuring **Phonebook Management** and **Movie Library Management**. These projects were developed as part of CSE115L coursework at North South University, demonstrating proficiency in file handling, data structures, dynamic memory management, and user interface design in C.
+[![C](https://img.shields.io/badge/C-ANSI%20C-A8B9CC?logo=c&logoColor=white)](https://en.wikipedia.org/wiki/C_(programming_language))
+[![GCC](https://img.shields.io/badge/GCC-any%20version-4EAA25?logo=gnu&logoColor=white)](https://gcc.gnu.org/)
+[![Course](https://img.shields.io/badge/Course-CSE115L-yellow)](https://ece.northsouth.edu/)
+[![NSU](https://img.shields.io/badge/NSU-North%20South%20University-1E90FF)](https://www.northsouth.edu/)
+[![CI](https://github.com/sifat-jaman-13/SAT/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/sifat-jaman-13/SAT/actions/workflows/c-cpp.yml)
 
----
-
-## 📋 Quick Overview
-
-| System | Type | Purpose | Language |
-|--------|------|---------|----------|
-| **Phonebook** | Contact Manager | Manage personal contacts with detailed information | C |
-| **Movie Library** | Database System | Organize and search personal movie collection | C  |
+[![Platform](https://img.shields.io/badge/platform-windows%20%7C%20linux%20%7C%20macos-brightgreen)](#-quick-start)
+[![License](https://img.shields.io/badge/license-educational%20use-blue)](#-license)
+[![Repository](https://img.shields.io/badge/GitHub-SAT-333333?logo=github)](https://github.com/sifat-jaman-13/SAT)
 
 ---
 
-## 🎯 Key Features
+## 📚 Project Information
 
-### 🔍 **Phonebook Management System** (`Phonebook_FIXED.c`)
-
-A comprehensive contact management application with 7+ features:
-
-- ✨ **Add Contacts** - Create new contacts with validation
-- 📝 **Update Contacts** - Modify existing contact details  
-- 🔎 **Search Contacts** - Find contacts by first name
-- 👥 **Display All** - View complete contact list
-- 🗑️ **Delete Contacts** - Remove single or all contacts
-- 📊 **Contact Counter** - Track total saved contacts
-- 💾 **Data Persistence** - Automatic file saving to `phonebook.txt`
-
-**Contact Information Fields:**
-- First Name (Required) • Last Name
-- Mobile Number (7-20 digits) • Gender  
-- Email • Birthdate • Address
-
-### 🎬 **Movie Library Management System** (`Movie_Management_System.c`)
-
-A sophisticated movie database with advanced features and analytics:
-
-**Core Features:**
-- 🎥 **Add Movies** - Add new movies to library with full metadata
-- 🔎 **Search Movies** - Find by:
-  - Movie Title
-  - Director Name
-  - Language
-  - Release Year
-- 🗑️ **Delete Movies** - Remove by:
-  - Single title
-  - Genre
-  - Director
-  - Language
-  - Year
-- ✏️ **Edit Movies** - Update movie details
-- 📊 **Display Sorted** - View all movies sorted by year (newest first)
-- 🔐 **Login System** - Secure access with credentials:
-  - Username: `admin`
-  - Password: `sifat`
-
-**Advanced Features (v2.0):**
-- ⭐ **Rating System** - Rate movies on 1-5 star scale
-- 🎫 **Rental Tracking** - Track checkout dates and rental status
-- 📈 **Genre Statistics** - View genre distribution and analytics
-- 📥 **CSV Export** - Export entire library to `movies_export.csv`
-- 💾 **Database Backup** - Create backups to `movies_backup.txt`
-- 📋 **Movie Count** - View total library statistics
-
-**Movie Information Fields:**
-- Title • Genre • Release Year • Director • Language • Rating • Rental Status • Checkout Date
+| Field | Value |
+|-------|-------|
+| **Project** | SAT — Phonebook & Movie Library Management Systems |
+| **Authors** | Sifat Jaman, Fahmid Shahriar Alvee, Tanvir Rahaman Miraz |
+| **Course** | CSE115L — Programming Language I Lab |
+| **Section / Group** | Section 12, Group B1 |
+| **Institution** | North South University |
+| **Semester** | Fall 2022 |
+| **Type** | Group project (3 members) |
+| **Language** | C (standard C, no external libraries) |
+| **Size** | 2 programs, 1,823 lines of code, 35 functions |
+| **Repository** | [sifat-jaman-13/SAT](https://github.com/sifat-jaman-13/SAT) |
 
 ---
 
-## 🛠️ System Requirements
+## 🎯 Overview
 
-### Minimum Requirements
-- **Operating System:** Windows (native), Linux/macOS (with modifications)
-- **Compiler:** GCC 9+, MSVC 2019+, or compatible C99+ compiler
-- **RAM:** 256 MB minimum
-- **Storage:** 1 MB (including source and compiled binary)
+This repository holds the two console programs submitted for CSE115L, the lab component of Programming Language I.
 
-### Dependencies
-- Standard C library (`stdio.h`, `stdlib.h`, `string.h`)
-- Windows Console API (`windows.h`, `conio.h`) - Windows only
-- Standard file I/O operations
+**Phonebook** (`Phonebook.c`, 457 lines) manages contact records: add, update, search, delete, and count, with input validation on names and phone numbers.
 
-### Cross-Platform Compatibility
+**Movie Management System** (`Movie_Management_System.c`, 1,366 lines) is the larger of the two — a library catalogue behind a login, supporting rentals and returns, star ratings, multi-criteria search, bulk deletion, sorted listing, genre statistics, CSV export, and backup.
 
-**Windows:** ✅ Fully supported (uses Windows console colors)
+Both keep their records in plain-text files in the working directory and use nothing beyond the C standard library. Together they cover the fundamentals the course targets: structs, file I/O, string handling, arrays, and menu-driven control flow.
 
-**Linux/macOS:** ⚙️ Requires modifications:
-- Remove `#include <windows.h>` and `#include <conio.h>`
-- Replace `system("cls");` with `system("clear");`
-- Remove `system("color E0");` (not supported)
-- Replace `getch()` with platform-specific input
+> **On the name:** "SAT" comes from the first initials of the three group members — **S**ifat, **A**lvee, **T**anvir.
 
 ---
 
-## 🚀 Quick Start Guide
+## ✨ Features
 
-### Step 1: Compilation
+### Phonebook — 8 menu options
 
-#### Using GCC (Recommended)
+| # | Option |
+|---|--------|
+| 1 | Add new contact |
+| 2 | Update contact details |
+| 3 | Display all saved contacts |
+| 4 | Delete a contact |
+| 5 | Search for a contact |
+| 6 | See total number of contacts saved |
+| 7 | Exit Phonebook |
+| 8 | Delete all records |
+
+Each contact stores seven fields:
+
+```c
+typedef struct {
+    char fname[MAX_NAME];      char lname[MAX_NAME];
+    char number[MAX_PHONE];    char gender[MAX_GENDER];
+    char email[MAX_EMAIL];     char birthdate[MAX_DATE];
+    char address[MAX_ADDRESS];
+} Contact;
+```
+
+First name is required; the mobile number is validated to 7–20 digits.
+
+### Movie Management System — 15 menu options
+
+| # | Option |
+|---|--------|
+| 1 | Add a Movie |
+| 2 | Search for a Movie |
+| 3 | Delete a Movie by Title |
+| 4 | Delete Multiple Movies |
+| 5 | Display All Movies (Sorted by Year) |
+| 6 | Edit Movie Details |
+| 7 | Count Movies in Library |
+| 8 | Rate a Movie (1–5 stars) |
+| 9 | Rent a Movie |
+| 10 | Return a Movie |
+| 11 | Genre Statistics |
+| 12 | Export to CSV |
+| 13 | Backup Database |
+| 14 | Delete Entire Library |
+| 15 | Exit |
+
+Each film stores eight fields:
+
+```c
+typedef struct {
+    char title[100];   char genre[50];      int  year;
+    char director[100]; char language[50];  int  rating;
+    char checkout_date[11];                 int  is_rented;
+} Movie;
+```
+
+**Search** (option 2) offers four sub-modes: by Title, Director, Language, or Release Year.
+**Delete Multiple** (option 4) offers four criteria: by Genre, Year, Director, or Language.
+
+---
+
+## 📋 Requirements
+
+| Requirement | Minimum |
+|-------------|---------|
+| **Compiler** | Any C compiler — GCC, Clang, or MSVC |
+| **OS** | Windows, Linux, or macOS |
+| **RAM** | Negligible |
+| **Disk** | Under 1 MB |
+
+No external libraries or build system. Two source files, compiled directly.
+
+### Verify your toolchain
+
 ```bash
-# Compile Phonebook
-gcc Phonebook_FIXED.c -o phonebook.exe
-
-# Compile Movie Management System  
-gcc Movie_Management_System_FIXED.c -o movies.exe
+gcc --version
 ```
 
-#### Using MSVC
+---
+
+## 🚀 Quick Start
+
 ```bash
-# Compile Phonebook
-cl Phonebook_FIXED.c /o phonebook.exe
-
-# Compile Movie Management System
-cl Movie_Management_System_FIXED.c /o movies.exe
+git clone https://github.com/sifat-jaman-13/SAT.git
 ```
 
-#### Using Code::Blocks / Dev-C++
-1. Create new C project
-2. Add source file to project
-3. Build → Compile
-4. Debug → Start Debugging
-
-### Step 2: Execution
-
-**Phonebook:**
 ```bash
-./phonebook.exe
+cd SAT
 ```
 
-**Movie Library:**
+### Compile both programs
+
 ```bash
-./movies.exe
+gcc -Wall -Wextra -O2 Phonebook.c -o phonebook
 ```
+
+```bash
+gcc -Wall -Wextra -O2 Movie_Management_System.c -o movie_management
+```
+
+On Windows, add `.exe` to the output names. These are the same flags the CI workflow uses, so a clean local build matches a clean CI build.
 
 ---
 
-## 📖 User Guide & Workflows
-
-### 🎯 Phonebook Management System
-
-#### **Main Menu**
-```
-╔════════════════════════════════════╗
-║   PHONEBOOK MANAGEMENT SYSTEM      ║
-╚════════════════════════════════════╝
-
-1. Add a contact
-2. Update contact details
-3. Display all saved contacts
-4. Delete a specific contact
-5. Search for a contact
-6. Count total saved contacts
-7. Delete all records
-8. Exit
-```
-
-#### **Typical Workflows**
-
-**Adding a Contact:**
-```
-Option: 1
-Enter First Name: John
-Enter Last Name: Doe
-Enter Mobile Number: 01912345678
-Enter Gender: Male
-Enter Email: john@example.com
-Enter Birthdate: 1995-05-15
-Enter Address: 123 Main Street, Dhaka
-✓ Contact saved successfully!
-```
-
-**Searching for a Contact:**
-```
-Option: 5
-Enter First Name to search: John
-✓ Found:
-  Name: John Doe
-  Phone: 01912345678
-  Gender: Male
-  Email: john@example.com
-  DOB: 1995-05-15
-  Address: 123 Main Street, Dhaka
-```
-
----
-
-### 🎬 Movie Library Management System
-
-#### **Login Screen**
-```
-╔════════════════════════════════════╗
-║    MOVIE LIBRARY MANAGEMENT        ║
-║          LOGIN REQUIRED            ║
-╚════════════════════════════════════╝
-
-Username: admin
-Password: ••••••
-(Max 5 attempts before lockout)
-```
-
-#### **Main Menu (After Login)**
-```
-╔════════════════════════════════════╗
-║   MOVIE LIBRARY MAIN MENU          ║
-╚════════════════════════════════════╝
-
-1. Add a movie
-2. Search for a movie (4 methods)
-3. Delete a movie by title
-4. Delete movies by criteria
-5. Display all movies (sorted)
-6. Edit movie details
-7. Count total movies
-8. Clear entire library
-9. Exit
-```
-
-#### **Typical Workflows**
-
-**Adding a Movie:**
-```
-Option: 1
-Title: Inception
-Genre: Sci-Fi
-Year: 2010
-Director: Christopher Nolan
-Language: English
-✓ Movie added successfully!
-```
-
-**Searching for a Movie:**
-```
-Option: 2
-
-Search Methods:
-1. Search by Title
-2. Search by Director
-3. Search by Language
-4. Search by Release Year
-
-Choose: 1
-Enter Title: Inception
-
-✓ Found:
-  Title: Inception
-  Genre: Sci-Fi
-  Year: 2010
-  Director: Christopher Nolan
-  Language: English
-```
-
----
-
-## 💾 Data Storage & Persistence
-
-### File Structure
-```
-Project Directory/
-├── phonebook.exe                    (Compiled Phonebook)
-├── movies.exe                       (Compiled Movie Manager)
-├── phonebook.txt                    (Contact data - auto-created)
-└── movies.txt                       (Movie data - auto-created)
-```
-
-### Data Format
-- **Storage Type:** Binary format (optimized for speed)
-- **Auto-creation:** Files are automatically created on first run
-- **Backup:** Original files maintained; temp files used for operations
-- **Persistence:** All data survives application restart
-
-### File Permissions
-- Read/Write access required in project directory
-- Both `.txt` files can be backed up manually
-- No external database required
-
----
-
-## 🔐 Security Features
+## 🖥️ Usage
 
 ### Phonebook
-- Input validation for phone numbers (7-20 digits)
-- Buffer overflow protection with `fgets()`
-- Email format consideration
-- Safe string handling
 
-### Movie Library
-- **Login System with Attempt Limiting:**
-  - Maximum 5 failed login attempts
-  - Lockout after exceeding limit
-  - Credentials: admin / sifat
-- **Input Validation:**
-  - String length restrictions
-  - Buffer management
-  - Duplicate prevention (movie operations)
+```bash
+./phonebook
+```
 
----
+Opens straight to the main menu. Choose an option by number.
 
-## ⚠️ Version History & Deprecation
+### Movie Management System
 
-**Current Production Version:** v2.0 (FIXED) ✅
+```bash
+./movie_management
+```
 
-The original v1.0 files (`Phonebook.c` and `Movie Management System.c`) contained bugs and security issues. These have been archived in the `deprecated/` folder for reference only.
+Prompts for a login first, then shows the main menu.
 
-**Always use the FIXED versions:**
-- `Phonebook_FIXED.c` ✅
-- `Movie_Management_System_FIXED.c` ✅
-
-The deprecated files are kept for academic/historical purposes to demonstrate the improvements made in v2.0.
+Both programs clear the screen between menus via a `CLEAR_SCREEN` macro that resolves to `cls` on Windows and `clear` elsewhere. Data files are created in the current working directory on first write, so run each program from the directory where you want its records kept.
 
 ---
 
-## 🐛 Fixed Issues & Improvements (v2.0)
+## 🔐 Default Credentials
 
-### Critical Fixes
-- ✅ Replaced unsafe `gets()` with secure `fgets()`
-- ✅ Fixed newline handling in string inputs
-- ✅ Corrected typos (delelteone → deleteone, Brithdate → Birthdate)
-- ✅ Added proper buffer clearing with `getchar()`
-- ✅ Fixed missing `rewind()` calls in Movie app
-- ✅ Improved `printf()` formatting
+The Movie Management System requires a login. The Phonebook does not.
 
-### Enhancements
-- ✅ Enhanced input validation for robustness
-- ✅ Better error messages and user feedback
-- ✅ Improved memory management
-- ✅ Better variable naming conventions
-- ✅ Code formatting and readability improvements
+```
+Username: admin
+Password: sifat
+```
 
----
+Hardcoded in `Movie_Management_System.c`. Five failed attempts and the program exits, with the remaining count shown after each failure.
 
-## 📊 Algorithm Implementations
-
-### Search Algorithms
-- **Linear Search:** O(n) - Used for contact and movie searches
-- **Partial Name Matching:** Case-sensitive substring search
-- **Multi-field Search:** Search by various attributes
-
-### Sorting Algorithms
-- **Bubble Sort:** Used for sorting movies by release year
-- **Time Complexity:** O(n²) for worst case
-- **Optimization:** Newest movies displayed first
-
-### Data Structures
-- **Structs:** For organizing contact and movie information
-- **Dynamic Arrays:** For storing variable number of records
-- **File I/O:** Binary file operations for persistence
-
----
-
-## 🎓 Learning Outcomes
-
-This project teaches:
-- **C Programming Fundamentals** - Core language concepts
-- **File I/O Operations** - Reading/writing binary files
-- **Data Structures** - Structs and arrays
-- **Memory Management** - Dynamic allocation and deallocation
-- **String Operations** - Buffer management and validation
-- **Algorithm Design** - Search and sort implementations
-- **User Interface** - Menu-driven applications
-- **Error Handling** - Input validation and exception handling
-- **Software Engineering** - Code organization and maintainability
-
----
-
-## ⚠️ Known Limitations
-
-1. **Case Sensitivity** - Searches are case-sensitive
-2. **Phone Validation** - Only checks length, not format
-3. **Search Results** - Shows first match only (except bulk displays)
-4. **Fixed Arrays** - Maximum field lengths cannot exceed allocated size
-5. **No Export** - Cannot export to CSV or other formats
-6. **Single User** - No multi-user support (Movie app has login but no true multi-user)
-7. **Windows-Only** - Requires modifications for Linux/macOS
-8. **Weak Credentials** - Hardcoded login (acceptable for educational purposes)
-9. **No Network** - Cannot sync across devices
-10. **Limited Sorting** - Only bubble sort; no advanced algorithms
-
----
-
-## 🚀 Future Enhancement Opportunities
-
-- [ ] Add sorting by first/last name (Phonebook)
-- [ ] Implement partial name matching with wildcards
-- [ ] Create CSV import/export functionality
-- [ ] Add password encryption (bcrypt or similar)
-- [ ] Implement GUI using GTK+/Qt
-- [ ] Add multi-user support with role-based access
-- [ ] Create movie rating and review system
-- [ ] Add genre-based statistics and analytics
-- [ ] Implement backup and restore functionality
-- [ ] Build cross-platform version with no Windows dependencies
-- [ ] Add cloud synchronization
-- [ ] Create mobile companion app
-- [ ] Implement duplicate detection (phonebook)
-- [ ] Add advanced search filters
-- [ ] Create data migration tools
+> ⚠️ **Security note:** the credentials are compared with `strcmp` against string literals in the source, and all records are stored as unencrypted plain text. This is a teaching exercise — do not store real personal data in it.
 
 ---
 
 ## 📁 Project Structure
 
-### File Organization
 ```
 SAT/
-├── README.md                              (This documentation)
-├── Phonebook_FIXED.c                      (Fixed & production-ready)
-├── Movie_Management_System_FIXED.c        (Fixed & production-ready)
-├── CSE115L_GROUP_B1_Project_Report.pdf   (Detailed technical report)
-├── CSE115L_report_cover_S12_B1.docx      (Cover documentation)
-├── deprecated/                            (Old versions - archived)
-│   ├── Phonebook.c                        (Original version - deprecated)
-│   └── Movie Management System.c          (Original version - deprecated)
-└── .github/                               (GitHub workflows if any)
+├── Phonebook.c                          # Contact manager (457 lines, 10 functions)
+├── Movie_Management_System.c            # Movie library (1,366 lines, 25 functions)
+├── CSE115L_GROUP_B1_Project_Report.pdf  # Submitted lab report
+├── CSE115L_report_cover_S12_B1.docx     # Report cover sheet
+├── LICENSE                              # Educational use license
+├── .gitignore                           # Excludes binaries and runtime data files
+└── .github/workflows/c-cpp.yml          # CI: builds both programs on every push
 ```
 
-### Key Functions Reference
+---
 
-#### **Phonebook_FIXED.c**
-| Function | Purpose |
-|----------|---------|
-| `addperson()` | Add new contact to phonebook |
-| `deleteone()` | Delete specific contact |
-| `update()` | Update contact information |
-| `searchandprint()` | Search and display contact |
-| `displayall()` | Show all contacts |
-| `deleteall()` | Clear all records |
-| `save_contacts()` | Save to phonebook.txt |
-| `load_contacts()` | Load from phonebook.txt |
+## 🏗️ Architecture
 
-#### **Movie_Management_System_FIXED.c**
-| Function | Purpose |
-|----------|---------|
-| `addMovie()` | Add movie to library |
-| `searchMovieByTitle()` | Search by title |
-| `searchMovieByDirector()` | Search by director |
-| `searchMovieByLanguage()` | Search by language |
-| `searchMovieByReleaseDate()` | Search by year |
-| `deleteMovieByTitle()` | Delete single movie |
-| `deleteMovieByGenre()` | Delete by genre |
-| `deleteMovieByYear()` | Delete by year |
-| `displayAllMoviesSortedByYear()` | Sorted display |
-| `editMovieDetails()` | Edit movie info |
-| `save_movies()` | Save to movies.txt |
-| `load_movies()` | Load from movies.txt |
+Both programs follow the same shape, which is the shape the course teaches:
+
+1. **A `struct`** describing one record — `Contact` or `Movie`.
+2. **A menu loop** in `main`, reading a numbered choice and dispatching to a handler.
+3. **One function per operation**, each taking a `FILE *` and doing its own open, work, and close.
+4. **Plain-text files** as the store, one record per line.
+
+Deletions and updates use the standard C copy-and-rename technique: stream every record to a temporary file, skipping or replacing the target, then rename the temporary over the original. That is what `temporary.txt` and `temp.txt` are for.
+
+### Portability
+
+Neither program is Windows-only. Platform-specific code sits behind guards:
+
+```c
+#ifdef _WIN32
+    #include <windows.h>
+    #include <conio.h>
+    #define CLEAR_SCREEN system("cls")
+#else
+    #define CLEAR_SCREEN system("clear")
+#endif
+```
+
+`<windows.h>` and `<conio.h>` are included only when `_WIN32` is defined, so both files compile unmodified with GCC or Clang on Linux and macOS.
+
+### Continuous integration
+
+[`.github/workflows/c-cpp.yml`](.github/workflows/c-cpp.yml) runs on every push and pull request to `main`. It sets up MSYS2 with `mingw-w64-x86_64-gcc` on `windows-latest` and compiles both programs with `-Wall -Wextra -O2`, so warnings surface as part of the build.
 
 ---
 
-## 🤝 Contributing Guidelines
+## 💾 Data Persistence
 
-This is an **educational project** from CSE115L. For improvements:
+Records are stored as plain text — not binary — in the working directory. Every file is created on demand.
 
-1. **Fork or Clone** the repository
-2. **Create a branch** for your feature
-3. **Make changes** with clear comments
-4. **Test thoroughly** on your system
-5. **Document modifications** in commit messages
-6. **Submit a pull request** with detailed description
+### Phonebook
 
-### Code Style
-- Use meaningful variable names
-- Add comments for complex logic
-- Follow K&R C style guidelines
-- Keep lines under 80 characters where possible
-- Use proper indentation (4 spaces)
+| File | Purpose |
+|------|---------|
+| `phonebook.txt` | The contact records |
+| `temporary.txt` | Scratch file for deletes and updates; removed afterwards |
 
----
+### Movie Management System
 
-## 📚 Educational Resources
+| File | Purpose |
+|------|---------|
+| `movies.txt` | The film records |
+| `temp.txt` | Scratch file for deletes and edits; removed afterwards |
+| `movies_backup.txt` | Written by option 13, Backup Database |
+| `movies_export.csv` | Written by option 12, Export to CSV |
 
-### What You'll Learn
-- **C Language Mastery** - Advanced C programming concepts
-- **System Design** - Building manageable applications
-- **User Interface** - Creating interactive CLI applications
-- **Database Concepts** - File-based data storage
-- **Debugging Skills** - Identifying and fixing issues
-- **Best Practices** - Professional coding standards
+All six are listed in [`.gitignore`](.gitignore) — they are the output of running the programs, not part of the source, so a fresh clone starts with an empty library.
 
-### Related Topics
-- **Data Structures & Algorithms** - Implementation practice
-- **Software Engineering** - Project organization
-- **Operating Systems** - File system interaction
-- **Computer Architecture** - Memory management
+> Plain text keeps the storage layer readable while learning file I/O. The trade-off is that a record containing the field delimiter can corrupt a line, and every operation rewrites the whole file.
 
 ---
 
-## 🏆 Project Statistics
+## 🐛 Troubleshooting
 
-| Metric | Phonebook | Movies | Total |
-|--------|-----------|--------|-------|
-| Lines of Code | ~250 | ~400 | ~650 |
-| Functions | 8 | 12 | 20 |
-| Data Fields | 7 | 5 | 12 |
-| Features | 7 | 9 | 16 |
-| Search Methods | 1 | 4 | 5 |
-| Delete Operations | 2 | 5 | 7 |
+**`gcc: command not found`**
+Install a compiler: `sudo apt install build-essential` on Debian/Ubuntu, `xcode-select --install` on macOS, or MSYS2/MinGW on Windows.
 
----
+**The screen does not clear**
+`CLEAR_SCREEN` shells out to `cls` or `clear`. Some IDE-embedded consoles do not support either; run the program in a real terminal instead.
 
-## 🔧 Troubleshooting
+**Records are not saved, or the program cannot find them**
+The data files are created in the current working directory, not next to the executable. Run the program from a writable directory, and always from the same one.
 
-### Common Issues
+**Login fails on the Movie Management System**
+The credentials are case-sensitive: `admin` and `sifat`. After five failures the program exits by design.
 
-**Issue: "phonebook.txt not found"**
-- Solution: Program auto-creates it. Check write permissions in directory.
+**Garbled characters in the menus**
+The Movie Management System prints UTF-8 symbols such as `✗`. On an older Windows console, switch the code page first:
 
-**Issue: Compilation errors with `#include <windows.h>`**
-- Solution: You're on Linux/macOS. Comment out Windows-specific includes.
-
-**Issue: "Movie not found" when searching**
-- Solution: Search is case-sensitive. Verify spelling and exact case.
-
-**Issue: Program crashes after adding many contacts**
-- Solution: Check available disk space and RAM.
-
-**Issue: Garbled text colors**
-- Solution: Terminal doesn't support colors. This is normal.
+```bash
+chcp 65001
+```
 
 ---
 
-## 📞 Support & Issues
+## ⚠️ Known Limitations
 
-For questions or issues:
-1. ✅ Check limitations section above
-2. ✅ Review CSE115L_GROUP_B1_Project_Report.pdf
-3. ✅ Verify input format requirements
-4. ✅ Ensure proper file permissions
-5. ✅ Check that directory is writable
+1. **Credentials are hardcoded** in the source and compared as plain text.
+2. **No encryption.** All records, including phone numbers, emails, addresses, and birthdates, are stored in readable text files.
+3. **Whole-file rewrites.** Every delete and update streams the entire file through a temporary copy, which does not scale beyond a few thousand records.
+4. **Fixed-size fields.** Field widths are set by `#define` constants; longer input is truncated.
+5. **No concurrency safety.** Two instances running against the same data file will overwrite one another.
+6. **The two programs are independent.** They share no data and no code, only a repository.
+7. **No automated tests.** CI verifies that both programs compile without warnings; it does not test their behaviour.
 
 ---
 
-## 📄 License
+## 🗺️ Roadmap
 
-**Type:** Educational Use License
+These are the natural next steps for anyone extending the project:
 
-This project is provided for educational purposes as part of **North South University CSE115L course**. Use freely for:
-- ✅ Learning and understanding
-- ✅ Educational assignments
-- ✅ Teaching others
-- ✅ Non-commercial purposes
+- [ ] Move credentials out of the source and store a password hash rather than a literal
+- [ ] Factor the shared menu, input-validation, and file-rewrite helpers into a common module
+- [ ] Replace fixed-size fields with dynamic allocation
+- [ ] Add a proper delimiter with escaping, or move to CSV throughout
+- [ ] Add pagination to the display-all listings
+- [ ] Add a test script that drives each program through a scripted session and diffs the output
+- [ ] Extend CI to build on Linux and macOS as well as Windows
+
+---
+
+## 🎓 Learning Outcomes
+
+- **Structs** — modelling a record as a single composite type
+- **File I/O** — `fopen`, `fgets`, `fprintf`, `rename`, `remove`, and the copy-and-rename update pattern
+- **String handling** — `strcmp`, `strcpy`, `strtok`, and safe bounded input
+- **Menu-driven design** — a control loop dispatching to one function per operation
+- **Input validation** — length and digit checks on user-supplied fields
+- **Sorting and searching** — ordering the catalogue by year, matching across four different fields
+- **Conditional compilation** — `#ifdef` guards for cross-platform builds
+- **Collaboration** — dividing two programs across three contributors under version control
 
 ---
 
 ## 👥 Contributors
 
-This project was developed and maintained by Sifat Jaman:
+A group project for CSE115L, Section 12, Group B1.
 
-| Contributor | GitHub | Role |
-|-------------|--------|------|
-| **Sifat Jaman** | [@sifat-jaman-13](https://github.com/sifat-jaman-13) | Developer & Maintainer |
+| Name | Student ID | GitHub |
+|------|-----------|--------|
+| **Sifat Jaman** | 2232924642 | [@sifat-jaman-13](https://github.com/sifat-jaman-13) |
+| **Fahmid Shahriar Alvee** | 2231997642 | [@FahmidShahriarAlvee](https://github.com/FahmidShahriarAlvee) |
+| **Tanvir Rahaman Miraz** | 2232397042 | [@Tanvir-Miraz](https://github.com/Tanvir-Miraz) |
 
-**Course Instructor:** CSE115L Faculty  
-**Institution:** North South University  
-**Semester:** 1st Semester, 2024-2026  
+### Course staff
 
----
+| Role | Name |
+|------|------|
+| Faculty | Rifat Ahmed Hassan (RIH) |
+| Lab Instructor | A. S. M. Sabiqul Hassan |
 
-## 🎯 Project Goals - All Achieved ✅
+North South University, Department of Electrical and Computer Engineering
+Submitted 5 December 2022.
 
-| Goal | Status |
-|------|--------|
-| Understand file handling in C | ✅ Complete |
-| Implement data persistence | ✅ Complete |
-| Create interactive user interfaces | ✅ Complete |
-| Practice struct and data management | ✅ Complete |
-| Learn search and sort algorithms | ✅ Complete |
-| Develop debugging and testing skills | ✅ Complete |
-| Write production-ready code | ✅ Complete |
-| Document code thoroughly | ✅ Complete |
+### Related projects
+
+- [**GameStore-Python**](https://github.com/sifat-jaman-13/GameStore-Python) — a desktop game store in Python with CustomTkinter, for CSE101
+- [**Movie-Project-Java**](https://github.com/sifat-jaman-13/Movie-Project-Java) — a movie store in Java with JavaFX, for CSE215
 
 ---
 
-## 📈 Version History
+## 📜 License
 
-| Version | Date | Status | Notes |
-|---------|------|--------|-------|
-| **2.0** | 2026 | ✅ Current | Fixed version with improvements |
-| **1.0** | 2024 | ⚠️ Deprecated | Original version with issues |
+**Educational use — see [LICENSE](LICENSE).**
 
----
+Copyright © 2022 Sifat Jaman, Fahmid Shahriar Alvee, Tanvir Rahaman Miraz. Copyright is held jointly by all three authors.
 
-## 🎖️ Achievements
+- ✅ **Permitted:** reading, running, studying, teaching from, and building on this code for non-commercial learning, with attribution
+- ❌ **Not permitted:** commercial use, or redistribution with the attribution removed
+- 🚫 **Never:** submitting this work as your own coursework — that is plagiarism, and the license forbids it
 
-- ✅ Successfully compiles with zero errors (v2.0)
-- ✅ Implements all required features
-- ✅ Demonstrates proper C programming practices
-- ✅ Uses appropriate data structures
-- ✅ Includes file persistence
-- ✅ Provides user-friendly interface
-- ✅ Well-documented and maintainable
-- ✅ Ready for academic evaluation
-
----
-
-## 📋 Verification Checklist
-
-- ✅ Phonebook system fully functional
-- ✅ Movie library system fully functional  
-- ✅ File persistence working
-- ✅ Login system operational
-- ✅ All search functions implemented
-- ✅ All delete operations working
-- ✅ Input validation in place
-- ✅ Error handling implemented
-- ✅ Code compiles cleanly
-- ✅ Documentation complete
-- ✅ Cross-platform considerations noted
-
----
-
-## 📞 Contact & Support
-
-**Questions?** Check the project documentation or contact Sifat Jaman:
-- 👤 **Sifat Jaman** - [@sifat-jaman-13](https://github.com/sifat-jaman-13)
-
----
-
-**Version:** 2.0 (Fixed)  
-**Last Updated:** May 8, 2026  
-**Status:** ✅ Production Ready  
-**Repository:** https://github.com/sifat-jaman-13/SAT  
-
----
-
-*This README follows professional documentation standards matching ScarZero Game Store Java Project quality standards.*
-
+See [LICENSE](LICENSE) for the full terms.
