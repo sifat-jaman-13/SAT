@@ -328,18 +328,17 @@ These are the natural next steps for anyone extending the project:
 
 A group project for CSE115L, Section 12, Group B1.
 
-| Name | Student ID | GitHub |
-|------|-----------|--------|
-| **Sifat Jaman** | — | [@sifat-jaman-13](https://github.com/sifat-jaman-13) |
-| **Fahmid Shahriar Alvee** | — | [@FahmidShahriarAlvee](https://github.com/FahmidShahriarAlvee) |
-| **Tanvir Rahaman Miraz** | — | [@Tanvir-Miraz](https://github.com/Tanvir-Miraz) |
+| Name | GitHub |
+|------|--------|
+| **Sifat Jaman** | [@sifat-jaman-13](https://github.com/sifat-jaman-13) |
+| **Fahmid Shahriar Alvee** | [@FahmidShahriarAlvee](https://github.com/FahmidShahriarAlvee) |
+| **Tanvir Rahaman Miraz** |  [@Tanvir-Miraz](https://github.com/Tanvir-Miraz) |
 
 ### Course staff
 
 | Role | Name |
 |------|------|
 | Faculty | Rifat Ahmed Hassan (RIH) |
-| Lab Instructor | A. S. M. Sabiqul Hassan |
 
 North South University, Department of Electrical and Computer Engineering
 Submitted 5 December 2022.
