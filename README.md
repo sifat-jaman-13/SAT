@@ -330,9 +330,9 @@ A group project for CSE115L, Section 12, Group B1.
 
 | Name | Student ID | GitHub |
 |------|-----------|--------|
-| **Sifat Jaman** | 2232924642 | [@sifat-jaman-13](https://github.com/sifat-jaman-13) |
-| **Fahmid Shahriar Alvee** | 2231997642 | [@FahmidShahriarAlvee](https://github.com/FahmidShahriarAlvee) |
-| **Tanvir Rahaman Miraz** | 2232397042 | [@Tanvir-Miraz](https://github.com/Tanvir-Miraz) |
+| **Sifat Jaman** | — | [@sifat-jaman-13](https://github.com/sifat-jaman-13) |
+| **Fahmid Shahriar Alvee** | — | [@FahmidShahriarAlvee](https://github.com/FahmidShahriarAlvee) |
+| **Tanvir Rahaman Miraz** | — | [@Tanvir-Miraz](https://github.com/Tanvir-Miraz) |
 
 ### Course staff
 
