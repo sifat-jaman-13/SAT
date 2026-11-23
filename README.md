@@ -352,12 +352,13 @@ Submitted 5 December 2022.
 
 ## 📜 License
 
-**Educational use — see [LICENSE](LICENSE).**
+**Proprietary non-commercial use — see [LICENSE](LICENSE).**
 
 Copyright © 2022 Sifat Jaman, Fahmid Shahriar Alvee, Tanvir Rahaman Miraz. Copyright is held jointly by all three authors.
 
-- ✅ **Permitted:** reading, running, studying, teaching from, and building on this code for non-commercial learning, with attribution
-- ❌ **Not permitted:** commercial use, or redistribution with the attribution removed
-- 🚫 **Never:** submitting this work as your own coursework — that is plagiarism, and the license forbids it
+- ✅ **Permitted:** individual personal and educational use under the licence terms, with attribution
+- ❌ **Not permitted:** company, organisational, business, or other commercial use without prior written permission
+- 🤝 **Team project:** commercial licensing or other commercial dealings require prior written approval from every co-author and copyright holder
+- 🎓 Do not submit this work as your own coursework; that is plagiarism.
 
 See [LICENSE](LICENSE) for the full terms.
