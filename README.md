@@ -361,6 +361,6 @@ Copyright © 2022 Sifat Jaman, Fahmid Shahriar Alvee, Tanvir Rahaman Miraz. Copy
 - ✅ **Permitted:** individual personal and educational use under the licence terms, with attribution
 - ❌ **Not permitted:** company, organisational, business, or other commercial use without prior written permission
 - 🤝 **Team project:** commercial licensing or other commercial dealings require prior written approval from every co-author and copyright holder
-- 🎓 Do not submit this work as your own coursework; that is plagiarism.
+- 🎓 **For students:** You are welcome to study this project, take inspiration from it, and build a similar or improved version with your own design, code, and modifications. Do not copy this repository wholesale or submit it unchanged as your own coursework.
 
 See [LICENSE](LICENSE) for the full terms.
