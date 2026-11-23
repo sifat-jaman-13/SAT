@@ -9,7 +9,7 @@
 [![CI](https://github.com/sifat-jaman-13/SAT/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/sifat-jaman-13/SAT/actions/workflows/c-cpp.yml)
 
 [![Platform](https://img.shields.io/badge/platform-windows%20%7C%20linux%20%7C%20macos-brightgreen)](#-quick-start)
-[![License](https://img.shields.io/badge/license-educational%20use-blue)](#-license)
+[![License](https://img.shields.io/badge/license-custom--non--commercial-orange)](#-license)
 [![Repository](https://img.shields.io/badge/GitHub-SAT-333333?logo=github)](https://github.com/sifat-jaman-13/SAT)
 
 ---
@@ -196,7 +196,7 @@ SAT/
 ├── Movie_Management_System.c            # Movie library (1,366 lines, 25 functions)
 ├── CSE115L_GROUP_B1_Project_Report.pdf  # Submitted lab report
 ├── CSE115L_report_cover_S12_B1.docx     # Report cover sheet
-├── LICENSE                              # Educational use license
+├── LICENSE                              # Proprietary non-commercial use licence
 ├── .gitignore                           # Excludes binaries and runtime data files
 └── .github/workflows/c-cpp.yml          # CI: builds both programs on every push
 ```
