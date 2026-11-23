@@ -39,7 +39,7 @@ This repository holds the two console programs submitted for CSE115L, the lab co
 
 **Movie Management System** (`Movie_Management_System.c`, 1,366 lines) is the larger of the two — a library catalogue behind a login, supporting rentals and returns, star ratings, multi-criteria search, bulk deletion, sorted listing, genre statistics, CSV export, and backup.
 
-Both keep their records in plain-text files in the working directory and use nothing beyond the C standard library. Together they cover the fundamentals the course targets: structs, file I/O, string handling, arrays, and menu-driven control flow.
+Both keep records in files in the working directory and use only the C standard library. The contact and movie databases are written as binary `struct` records with `fwrite`/`fread` (despite their `.txt` filenames); the movie system can also export a separate CSV file. Together they cover the fundamentals the course targets: structs, file I/O, string handling, arrays, and menu-driven control flow.
 
 > **On the name:** "SAT" comes from the first initials of the three group members — **S**ifat, **A**lvee, **T**anvir.
 
@@ -71,7 +71,7 @@ typedef struct {
 } Contact;
 ```
 
-First name is required; the mobile number is validated to 7–20 digits.
+First name is required. The mobile-number check enforces a length of 7–19 characters; it does not verify that every character is a digit.
 
 ### Movie Management System — 15 menu options
 
@@ -209,14 +209,14 @@ Both programs follow the same shape, which is the shape the course teaches:
 
 1. **A `struct`** describing one record — `Contact` or `Movie`.
 2. **A menu loop** in `main`, reading a numbered choice and dispatching to a handler.
-3. **One function per operation**, each taking a `FILE *` and doing its own open, work, and close.
-4. **Plain-text files** as the store, one record per line.
+3. **Operation functions** that receive file handles and perform the relevant record operations; some operations also create temporary or export files.
+4. **Binary struct records** written and read with `fwrite` and `fread`; the `.txt` extensions do not mean the database files are plain text.
 
 Deletions and updates use the standard C copy-and-rename technique: stream every record to a temporary file, skipping or replacing the target, then rename the temporary over the original. That is what `temporary.txt` and `temp.txt` are for.
 
 ### Portability
 
-Neither program is Windows-only. Platform-specific code sits behind guards:
+Both programs include platform-specific screen-clearing code, and the Phonebook also switches its pause and colour commands by platform. The Windows-only headers are guarded with `_WIN32`:
 
 ```c
 #ifdef _WIN32
@@ -238,27 +238,27 @@ Neither program is Windows-only. Platform-specific code sits behind guards:
 
 ## 💾 Data Persistence
 
-Records are stored as plain text — not binary — in the working directory. Every file is created on demand.
+The databases are stored in the working directory as binary records written directly from the programs' C structs. The `.txt` extensions are filenames only: these files are not line-oriented text and should not be edited manually. The Phonebook and Movie Management System create their primary data files when needed.
 
 ### Phonebook
 
 | File | Purpose |
 |------|---------|
-| `phonebook.txt` | The contact records |
-| `temporary.txt` | Scratch file for deletes and updates; removed afterwards |
+| `phonebook.txt` | Binary `Contact` records written with `fwrite` and read with `fread` |
+| `temporary.txt` | Temporary binary-record file used when deleting contacts; renamed to replace the database |
 
 ### Movie Management System
 
 | File | Purpose |
 |------|---------|
-| `movies.txt` | The film records |
-| `temp.txt` | Scratch file for deletes and edits; removed afterwards |
-| `movies_backup.txt` | Written by option 13, Backup Database |
-| `movies_export.csv` | Written by option 12, Export to CSV |
+| `movies.txt` | Binary `Movie` records written with `fwrite` and read with `fread` |
+| `temp.txt` | Temporary binary-record file used by movie-deletion operations; renamed to replace the database |
+| `movies_backup.txt` | Binary copy of `movies.txt`, written by option 13, Backup Database |
+| `movies_export.csv` | Text CSV export written by option 12, Export to CSV |
 
-All six are listed in [`.gitignore`](.gitignore) — they are the output of running the programs, not part of the source, so a fresh clone starts with an empty library.
+All six are listed in [`.gitignore`](.gitignore) — they are runtime outputs, not source files, so a fresh clone starts with empty databases. Because the database and backup files contain raw struct data, their layout can depend on the compiler and platform; they are not a portable interchange format. The CSV export is the human-readable output.
 
-> Plain text keeps the storage layer readable while learning file I/O. The trade-off is that a record containing the field delimiter can corrupt a line, and every operation rewrites the whole file.
+> Writing raw structs keeps the implementation simple for practicing file I/O, but the database files are not human-readable or reliably portable between different compiler/platform layouts. CSV export is available for inspection, although the export code does not escape commas or other CSV-special characters in field values.
 
 ---
 
@@ -289,11 +289,11 @@ chcp 65001
 
 1. **Credentials are hardcoded** in the source and compared as plain text.
 2. **No encryption.** All records, including phone numbers, emails, addresses, and birthdates, are stored in readable text files.
-3. **Whole-file rewrites.** Every delete and update streams the entire file through a temporary copy, which does not scale beyond a few thousand records.
-4. **Fixed-size fields.** Field widths are set by `#define` constants; longer input is truncated.
+3. **Simple file-update strategy.** Deletion operations rebuild the database through a temporary file, while several movie updates load all records into memory and write the records back. These approaches are intended for small teaching-project datasets, not large libraries.
+4. **Fixed-size fields and input buffers.** Record fields have fixed capacities. Long input can be cut off at the buffer boundary, and the Phonebook's mobile-number check validates length only, not digit-only content.
 5. **No concurrency safety.** Two instances running against the same data file will overwrite one another.
 6. **The two programs are independent.** They share no data and no code, only a repository.
-7. **No automated tests.** CI verifies that both programs compile without warnings; it does not test their behaviour.
+7. **No automated tests.** CI compiles both programs with GCC using `-Wall -Wextra -O2`; it does not run interactive sessions or verify application behaviour. Compiler warnings are shown in the build output but are not configured as errors.
 
 ---
 
