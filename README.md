@@ -41,6 +41,8 @@ This repository holds the two console programs submitted for CSE115L, the lab co
 
 Both keep records in files in the working directory and use only the C standard library. The contact and movie databases are written as binary `struct` records with `fwrite`/`fread` (despite their `.txt` filenames); the movie system can also export a separate CSV file. Together they cover the fundamentals the course targets: structs, file I/O, string handling, arrays, and menu-driven control flow.
 
+> **For students:** Use this project as a reference and a source of ideas, not as a copy-and-submit solution. Try building a similar application in your own way, changing the features or design, or extending it with improvements of your own. Experiment with the code, understand how each part works, and make the project reflect your own decisions and learning rather than copying it wholesale.
+
 > **On the name:** "SAT" comes from the first initials of the three group members — **S**ifat, **A**lvee, **T**anvir.
 
 ---
@@ -184,7 +186,7 @@ Password: sifat
 
 Hardcoded in `Movie_Management_System.c`. Five failed attempts and the program exits, with the remaining count shown after each failure.
 
-> ⚠️ **Security note:** the credentials are compared with `strcmp` against string literals in the source, and all records are stored as unencrypted plain text. This is a teaching exercise — do not store real personal data in it.
+> ⚠️ **Security note:** the credentials are compared with `strcmp` against string literals in the source, and records are stored as unencrypted binary struct data. This is a teaching exercise — do not store real personal data in it.
 
 ---
 
@@ -288,7 +290,7 @@ chcp 65001
 ## ⚠️ Known Limitations
 
 1. **Credentials are hardcoded** in the source and compared as plain text.
-2. **No encryption.** All records, including phone numbers, emails, addresses, and birthdates, are stored in readable text files.
+2. **No encryption.** All records, including phone numbers, emails, addresses, and birthdates, are stored without encryption in binary database files.
 3. **Simple file-update strategy.** Deletion operations rebuild the database through a temporary file, while several movie updates load all records into memory and write the records back. These approaches are intended for small teaching-project datasets, not large libraries.
 4. **Fixed-size fields and input buffers.** Record fields have fixed capacities. Long input can be cut off at the buffer boundary, and the Phonebook's mobile-number check validates length only, not digit-only content.
 5. **No concurrency safety.** Two instances running against the same data file will overwrite one another.
@@ -314,10 +316,10 @@ These are the natural next steps for anyone extending the project:
 ## 🎓 Learning Outcomes
 
 - **Structs** — modelling a record as a single composite type
-- **File I/O** — `fopen`, `fgets`, `fprintf`, `rename`, `remove`, and the copy-and-rename update pattern
+- **File I/O** — `fopen`, `fread`, `fwrite`, `rename`, `remove`, and the copy-and-rename update pattern
 - **String handling** — `strcmp`, `strcpy`, `strtok`, and safe bounded input
 - **Menu-driven design** — a control loop dispatching to one function per operation
-- **Input validation** — length and digit checks on user-supplied fields
+- **Input validation** — required-name checks, phone-number length checks, and basic numeric-input checks
 - **Sorting and searching** — ordering the catalogue by year, matching across four different fields
 - **Conditional compilation** — `#ifdef` guards for cross-platform builds
 - **Collaboration** — dividing two programs across three contributors under version control
