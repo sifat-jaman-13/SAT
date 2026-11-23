@@ -1,106 +1,87 @@
-EDUCATIONAL USE LICENSE
-Version 1.1
+PROPRIETARY NON-COMMERCIAL USE LICENCE
+Version 1.0
 
-Project:     SAT — Phonebook & Movie Library Management Systems
-Authors:     Sifat Jaman        (github.com/sifat-jaman-13)
-             Fahmid Shahriar Alvee (github.com/FahmidShahriarAlvee)
-             Tanvir Rahaman Miraz  (github.com/Tanvir-Miraz)
-Course:      CSE115L — Programming Language I Lab, Section 12, Group B1
-Institution: North South University, Dhaka, Bangladesh — Fall 2022
-Repository:  https://github.com/sifat-jaman-13/SAT
+Copyright remains with the copyright holder(s) identified in this repository and its source files. All rights not expressly granted below are reserved.
 
-Copyright (c) 2022 Sifat Jaman, Fahmid Shahriar Alvee, Tanvir Rahaman Miraz
+IMPORTANT
+This is a custom, proprietary, source-available licence. It is NOT an open-source licence and is not approved by the Open Source Initiative. It is not the GNU General Public License.
 
-================================================================================
+1. DEFINITIONS
 
-This project is published for educational reference. You may read it, run it,
-learn from it, and teach from it. You may not pass it off as your own.
+“Software” means the source code, object code, documentation, and other project materials in this repository that the relevant copyright holder(s) are authorised to license under these terms. It excludes third-party materials identified as being under separate licences.
 
-================================================================================
+“Individual” means a natural person acting solely in their personal capacity, not on behalf of, for the benefit of, or under the direction or control of a business or other organisation.
 
-1. OWNERSHIP
+“Non-Commercial Use” means use solely for personal, private, or individual educational purposes, without commercial advantage, business purpose, payment, monetisation, or provision of goods or services to or for an organisation.
 
-"Software" means the C source code and accompanying documentation in this
-repository. The Software is the joint original work of the three authors named
-above ("the Authors"), produced as a group lab project for CSE115L at North
-South University in Fall 2022. Copyright is held jointly.
+“Commercial Use” means any use connected with a business, trade, profession, commercial organisation, revenue-generating activity, paid service, product, or other commercial advantage. It includes internal business use, use by employees or contractors on behalf of an organisation, incorporation into a commercial product or service, and offering paid support or hosting.
 
-2. PERMITTED USE — NO PERMISSION REQUIRED
+“Commercial Permission” means prior written permission granted by the applicable copyright holder(s), under a separate commercial licence or written agreement.
 
-Permission is granted, free of charge, to any person obtaining a copy of the
-Software, to:
+“Co-Author” means a person who owns copyright in a contribution to a multi-author project.
 
-  (a) read, study, compile, and run the Software for learning purposes;
-  (b) use the Software as a teaching or demonstration aid, with attribution;
-  (c) fork or copy the Software for private study and experimentation;
-  (d) quote excerpts in reviews, discussions, or course material, with
-      attribution;
-  (e) build on the Software for your own non-commercial learning projects,
-      provided section 3 is satisfied.
+2. PERMITTED NON-COMMERCIAL USE
 
-This is a broader grant than a typical "all rights reserved" notice: reuse for
-learning is allowed here, so long as credit is kept intact.
+Subject to compliance with this Licence, the copyright holder(s) grant an Individual a limited, non-exclusive, worldwide, revocable licence to:
+(a) view and study the Software;
+(b) download and run the Software for Non-Commercial Use;
+(c) make modifications for the Individual’s own Non-Commercial Use; and
+(d) make a reasonable number of copies for personal backup.
 
-3. CONDITIONS
+This permission is personal to the Individual and may not be transferred or sublicensed.
 
-  (a) Attribution. Any copy, excerpt, or derivative work must retain this
-      license file and credit the Authors named above.
-  (b) Notice of change. If you publish a modified version, state plainly that
-      it is modified and that the Authors did not produce your changes.
+3. RESTRICTIONS
 
-4. NOT PERMITTED WITHOUT WRITTEN PERMISSION
+Without prior Commercial Permission, you may not:
+(a) use the Software for Commercial Use or on behalf of a company, business, or other organisation;
+(b) sell, rent, lease, sublicense, commercially distribute, or commercially exploit the Software or a modified version;
+(c) include the Software in a paid product, paid service, or commercial offering;
+(d) use the Software to provide services to customers or clients;
+(e) remove or alter copyright, authorship, or licence notices; or
+(f) represent that you own the Software or the copyright of another contributor.
 
-You may not:
+No permission is granted to redistribute the Software publicly, whether modified or unmodified, except where the applicable copyright holder(s) separately give prior written permission.
 
-  (a) use the Software for any commercial purpose, including sale, resale, or
-      inclusion in a commercial product or service;
-  (b) redistribute the Software with the attribution or this license removed;
-  (c) claim authorship of the Software or any part of it.
+4. COMMERCIAL PERMISSION AND CO-AUTHOR APPROVAL
 
-To request rights beyond this license, contact the Authors through the GitHub
-accounts listed above. All three hold copyright jointly.
+All Commercial Use requires prior written Commercial Permission.
 
-5. ACADEMIC INTEGRITY
+For a project with more than one Co-Author or copyright holder, commercial licensing, commercial use, commercial distribution, sale, sublicensing, paid support, commercial hosting, or any other commercial dealing involving the project requires prior written approval from every Co-Author and copyright holder whose rights are affected.
 
-This Software was submitted as coursework for academic credit. If you are a
-student:
+No project lead, maintainer, administrator, or individual Co-Author may grant commercial rights on behalf of another Co-Author or copyright holder without documented authority to do so.
 
-  - Submitting this Software, in whole or in part, as your own work is
-    plagiarism. It is prohibited by this license and by the academic
-    integrity policy of every institution the Authors are aware of.
-  - If your work is informed by this Software, cite it.
-  - Consequences of academic misconduct are yours, not the Authors'.
+For a project with a single copyright holder, that copyright holder may grant Commercial Permission separately.
 
-6. THIRD-PARTY COMPONENTS
+5. THIRD-PARTY MATERIALS AND FORKED CODE
 
-The Software has no third-party dependencies. It is written in standard C and
-uses only the C standard library, plus <windows.h> and <conio.h> on Windows,
-guarded by `#ifdef _WIN32`. Those headers ship with your compiler or operating
-system and remain under their own terms.
+This Licence applies only to material that the relevant project copyright holder(s) are entitled to license.
 
-7. NO WARRANTY
+Third-party components, assets, libraries, copied code, and other materials remain subject to their own licences and notices. Nothing in this Licence changes or overrides those terms.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN
-ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN
-CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Where a portion of the Software is derived from or copied from another project, this Licence does not apply to that portion unless its original copyright holder has authorised the change. Preserve all applicable upstream copyright and licence notices.
 
-The Software stores records in plain text files and uses hardcoded
-credentials. It is a first-year teaching exercise. Do not deploy it, and do
-not put real personal data into it.
+6. COPYRIGHT AND ATTRIBUTION
 
-8. TERMINATION
+The Software is protected by copyright and other applicable laws. Ownership is not transferred to you. You must retain all copyright and attribution notices in any permitted private copy or modification.
 
-Your rights under section 2 end automatically if you breach any term of this
-license. On termination, stop using the Software and delete your copies.
+7. TERMINATION
 
-9. GOVERNING LAW
+This Licence terminates automatically if you materially breach its terms. Upon termination, you must stop using the Software and destroy copies in your possession, except where applicable law requires otherwise. The copyright holder(s) may also pursue remedies available under applicable law.
 
-This license is governed by the laws of Bangladesh. Any dispute arising from
-it shall be subject to the jurisdiction of the courts of Dhaka, Bangladesh.
+8. NO WARRANTY
 
-================================================================================
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT, TO THE MAXIMUM EXTENT PERMITTED BY LAW.
 
-© 2022 Sifat Jaman, Fahmid Shahriar Alvee, Tanvir Rahaman Miraz.
+9. LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE COPYRIGHT HOLDER(S) SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES, OR FOR LOSS OF DATA, PROFITS, REVENUE, OR BUSINESS, ARISING OUT OF OR RELATING TO THE SOFTWARE OR THIS LICENCE.
+
+10. PREVIOUSLY DISTRIBUTED VERSIONS
+
+This Licence applies to versions and copies first distributed under these terms. It does not revoke or restrict rights that were validly granted to recipients of earlier versions under a previous licence. Earlier copies remain subject to the licence under which they were originally provided.
+
+11. GOVERNING LAW
+
+Any dispute concerning this Licence is subject to the applicable law and jurisdiction determined by the relevant court. Nothing in this section excludes mandatory rights or protections that cannot lawfully be excluded.
+
+By downloading, copying, modifying, or using the Software under this Licence, you agree to these terms to the extent permitted by applicable law.
